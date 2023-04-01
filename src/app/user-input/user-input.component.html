@@ -1,0 +1,22 @@
+<div class="row border border-primary border-2 m-2">
+  <div>Γράψτε μια λέξη:</div>
+  <div>
+    <input
+      class="w-100"
+      (input)="onUserInput($event)"
+      [value]="userInput"
+      type="text"
+    />
+  </div>
+  <div>
+    <button (click)="onUserClick()" class="btn btn-primary m-2">Υποβολή</button>
+  </div>
+  <app-odd-length-words
+    [oddWords]="oddWords"
+    class="col"
+  ></app-odd-length-words>
+  <app-even-length-words
+    [evenWords]="evenWords"
+    class="col"
+  ></app-even-length-words>
+</div>
