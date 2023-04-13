@@ -1,4 +1,6 @@
 <div class="border border-primary border-2 col m-2">
   <h2>Λέξεις με ζυγό μήκος</h2>
-  <div [style.white-space]="'pre-wrap'">{{ evenWords }}</div>
+  <div [style.white-space]="'pre-wrap'">
+    {{ evenWords ? evenWords : "There aren't any even-length words " }}
+  </div>
 </div>
