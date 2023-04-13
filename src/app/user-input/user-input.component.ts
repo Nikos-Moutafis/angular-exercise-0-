@@ -12,6 +12,10 @@ export class UserInputComponent {
   evenWords = '';
 
   onUserClick() {
+    if (this.userInput.includes(' ')) {
+      this.userInput = '';
+      return alert('Please insert one word without spaces');
+    }
     if (this.userInput.length % 2 === 0) {
       this.evenWords = this.evenWords + this.userInput + '\n';
     } else {
