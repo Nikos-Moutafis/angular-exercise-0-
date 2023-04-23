@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./even-length-words.component.css'],
 })
 export class EvenLengthWordsComponent {
-  @Input()
-  evenWords!: string;
+  @Input() evenWords: string[] = [];
+  @Input() evenCount: number = 0;
 }

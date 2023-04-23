@@ -8,27 +8,27 @@ import { Component } from '@angular/core';
 export class UserInputComponent {
   parentMessage = 'Hello ';
   userInput = '';
-  oddWords = '';
-  evenWords = '';
+  oddWords: string[] = [];
+  evenWords: string[] = [];
+  oddCount: number = 0;
+  evenCount: number = 0;
 
-  onUserClick() {
-    if (this.userInput.includes(' ')) {
-      this.userInput = '';
-      return alert('Please insert one word without spaces');
-    }
+  onUserClick(event: Event) {
+    event.preventDefault();
+
     if (this.userInput.length % 2 === 0) {
-      this.evenWords = this.evenWords + this.userInput + '\n';
+      this.evenWords.push(this.userInput);
+      this.evenCount++;
     } else {
-      this.oddWords = this.oddWords + this.userInput + '\n';
+      this.oddWords.push(this.userInput);
+      this.oddCount++;
     }
 
     this.userInput = '';
     //console.log(this.evenWords);
   }
 
-  onUserInput(event: Event) {
-    const target = event.target as HTMLInputElement;
-    this.userInput = target.value;
-    // console.log('hello');
+  hasSpaces() {
+    return this.userInput.includes(' ');
   }
 }

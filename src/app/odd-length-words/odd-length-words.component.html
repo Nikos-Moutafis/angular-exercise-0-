@@ -1,6 +1,13 @@
-<div class="border border-primary border-2 m-2">
-  <h2>Words with odd length</h2>
-  <div [style.white-space]="'pre-wrap'">
-    {{ oddWords ? oddWords : "There aren't any odd-length words" }}
-  </div>
+<div class="border border-primary border-3 rounded m-2 p-3">
+  <h2 class="mb-3">Words with odd length: {{ oddCount }}</h2>
+  <ng-container *ngIf="oddWords.length > 0; else noWords">
+    <ul class="list-group list-group-flush">
+      <ng-container *ngFor="let word of oddWords">
+        <li class="list-group-item bg-transparent border-0">{{ word }}</li>
+      </ng-container>
+    </ul>
+  </ng-container>
+  <ng-template #noWords>
+    <div class="text-muted">There aren't any odd-length words</div>
+  </ng-template>
 </div>
