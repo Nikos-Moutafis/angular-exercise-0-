@@ -1,6 +1,13 @@
-<div class="border border-primary border-2 col m-2">
-  <h2>Words with even length</h2>
-  <div [style.white-space]="'pre-wrap'">
-    {{ evenWords ? evenWords : "There aren't any even-length words " }}
-  </div>
+<div class="border border-primary border-3 rounded m-2 p-3">
+  <h2 class="mb-3">Words with even length: {{ evenCount }}</h2>
+  <ng-container *ngIf="evenWords.length > 0; else noWords">
+    <ul class="list-group list-group-flush">
+      <ng-container *ngFor="let word of evenWords">
+        <li class="list-group-item bg-transparent border-0">{{ word }}</li>
+      </ng-container>
+    </ul>
+  </ng-container>
+  <ng-template #noWords>
+    <div class="text-muted">There aren't any even-length words</div>
+  </ng-template>
 </div>

@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./odd-length-words.component.css'],
 })
 export class OddLengthWordsComponent {
-  @Input()
-  oddWords!: string;
+  @Input() oddWords: string[] = [];
+  @Input() oddCount: number = 0;
 }
