@@ -2,7 +2,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-qQvN2WXNz8M/sJN4i4c7aZys75OTu8iVxJVXsZl7V0zWVRu8PWV1i0mEgsNCeBtJOJBJtSeFB1tVTZ/BpYiDfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-# Angular Exercise0
+# Angular Exercise
 
 ## This app takes user's input and sorts one word a time. It sorts it based on word's length(odd or even).
 ### Techniques that used :
